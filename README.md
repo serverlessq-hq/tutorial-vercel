@@ -8,7 +8,7 @@ Check out the [tutorial](https://docs.serverlessq.com/tutorial/vercel)
 
 You can deploy this project with one button on Vercel.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fserverlessq-hq%2Ftutorial-vercel&env=SERVERLESSQ_API_TOKEN&envDescription=API%20Token%20for%20accessing%20serverlessq&envLink=https%3A%2F%2Fdocs.serverlessq.com%2Ftutorial%2Fvercel&project-name=tutorial-serverlessq-vercel&repo-name=tutorial-serverlessq-vercel)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fserverlessq-hq%2Ftutorial-vercel&env=SERVERLESSQ_API_TOKEN,SERVERLESSQ_QUEUE_ID&envDescription=API%20Token%20for%20accessing%20serverlessq&envLink=https%3A%2F%2Fdocs.serverlessq.com%2Ftutorial%2Fvercel&project-name=tutorial-serverlessq-vercel&repo-name=tutorial-serverlessq-vercel)
 
 ## Getting Started
 
