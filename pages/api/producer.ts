@@ -6,6 +6,7 @@ const SERVERLESSQ_QUEUE_ID = process.env.SERVERLESSQ_QUEUE_ID;
 const SERVERLESSQ_API_TOKEN = process.env.SERVERLESSQ_API_TOKEN;
 
 const VERCEL_URL = process.env.VERCEL_URL;
+const BASE_URL = process.env.BASE_URL || "api.serverlessq.com";
 
 type Data = {
   name: string;
@@ -22,10 +23,12 @@ export default async function handler(
   }`;
   console.log("Target URL: ", targetUrl);
 
-  await fetch(
-    `https://api.serverlessq.com?id=${SERVERLESSQ_QUEUE_ID}&target=${targetUrl}`,
+  const result = await fetch(
+    `https://${BASE_URL}?id=${SERVERLESSQ_QUEUE_ID}&target=${targetUrl}`,
     { headers: { "x-api-key": SERVERLESSQ_API_TOKEN! } }
   );
+
+  console.log("Result: ", result);
 
   res.status(200).json({ name: "Message sent to queue" });
 }
