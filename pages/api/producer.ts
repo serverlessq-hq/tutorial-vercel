@@ -23,10 +23,13 @@ export default async function handler(
   }`;
   console.log("Target URL: ", targetUrl);
 
-  const result = await fetch(
-    `https://${BASE_URL}?id=${SERVERLESSQ_QUEUE_ID}&target=${targetUrl}`,
-    { headers: { "x-api-key": SERVERLESSQ_API_TOKEN! } }
-  );
+  const fetchUrl = `https://${BASE_URL}?id=${SERVERLESSQ_QUEUE_ID}&target=${targetUrl}`;
+
+  console.log("Fetch URL", fetchUrl);
+
+  const result = await fetch(fetchUrl, {
+    headers: { "x-api-key": SERVERLESSQ_API_TOKEN! },
+  });
 
   console.log("Result: ", result);
 
