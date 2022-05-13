@@ -6,7 +6,6 @@ const SERVERLESSQ_QUEUE_ID = process.env.SERVERLESSQ_QUEUE_ID;
 const SERVERLESSQ_API_TOKEN = process.env.SERVERLESSQ_API_TOKEN;
 
 const VERCEL_URL = process.env.VERCEL_URL;
-const BASE_URL = process.env.BASE_URL || "api.serverlessq.com";
 
 console.log("Vercel URL:", VERCEL_URL);
 
@@ -20,12 +19,12 @@ export default async function handler(
 ) {
   const { success } = req.query;
 
-  const targetUrl = `https://${VERCEL_URL}api/consumer/${
+  const targetUrl = `https://${VERCEL_URL}/api/consumer/${
     success ? "success" : "fail"
   }`;
   console.log("Target URL: ", targetUrl);
 
-  const fetchUrl = `https://${BASE_URL}?id=${SERVERLESSQ_QUEUE_ID}&target=${targetUrl}`;
+  const fetchUrl = `https://api.serverlessq.com?id=${SERVERLESSQ_QUEUE_ID}&target=${targetUrl}`;
 
   const result = await fetch(fetchUrl, {
     headers: {
